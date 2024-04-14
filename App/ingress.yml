@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: order-ingress
+  namespace: holy-namespace 
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: mycluster.my
+    http:
+      paths:
+      - path: "/orders"
+        pathType: Prefix
+        backend:
+          service:
+            name: order-service
+            port:
+              number: 80

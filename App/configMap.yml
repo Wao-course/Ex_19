@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-config
+  namespace: holy-namespace
+data:
+  MONGODB_DBNAME: Orders
+  MONGODB_HOSTNAME: mongo-service
+  REL_URL_PATH: /orders

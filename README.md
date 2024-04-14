@@ -81,6 +81,9 @@ any name you chose!
 
 > kubectl create secret docker-registry my-registry-credentials --docker-server=https://registry.gitlab.au.dk --docker-username=TOKEN-NAME --docker-password=TOKEN-PASSWORD --docker-email=YOUR-EMAIL -n YOUR-NAMESPACE
 
+kubectl create secret docker-registry registry-credentials --docker-server=https://registry.gitlab.au.dk --docker-username=glpat-sxzYRCmxoxK7eyWDTRmi --docker-password=glpat-sxzYRCmxoxK7eyWDTRmi --docker-email=201910895@post.au.dk -n holy-namespace
+
+
 
 ### Getting started
 
