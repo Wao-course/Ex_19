@@ -10,7 +10,7 @@ spec:
   - host: mycluster.my
     http:
       paths:
-      - path: "/orders"
+      - path: "/"
         pathType: Prefix
         backend:
           service:

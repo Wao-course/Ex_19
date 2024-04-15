@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: orders-container
-        image: registry.gitlab.au.dk/wao-exercises1/ex_4  # Update with your GitLab image URL
+        image: registry.gitlab.au.dk/swwao/demo-projs/typescript-mongodb-crud  # Update with your GitLab image URL
         ports:
         - containerPort: 80
         env:

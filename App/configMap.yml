@@ -4,6 +4,6 @@ metadata:
   name: order-config
   namespace: holy-namespace
 data:
-  MONGODB_DBNAME: Orders
+  MONGODB_DBNAME: testdb
   MONGODB_HOSTNAME: mongo-service
-  REL_URL_PATH: /orders
+  REL_URL_PATH: /
