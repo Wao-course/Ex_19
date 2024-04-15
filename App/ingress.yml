@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: order-ingress
+  name: node-ingress
   namespace: holy-namespace 
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -14,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: order-service
+            name: node-service
             port:
               number: 80
