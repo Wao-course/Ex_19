@@ -14,4 +14,4 @@ spec:
     namespace: holy-namespace
     name: mongo-volume-pvc
   hostPath:
-    path: "~/slet/"
+    path: "/slet/"
