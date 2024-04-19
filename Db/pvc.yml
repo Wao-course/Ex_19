@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-volume-pvc
+  namespace: holy-namespace
+spec:
+  storageClassName: "local-path"
+  volumeName: mongodb-volume-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

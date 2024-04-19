@@ -10,10 +10,10 @@ spec:
   - host: mycluster.my
     http:
       paths:
-      - path: "/"
+      - path: "/api"
         pathType: Prefix
         backend:
           service:
             name: node-service
             port:
-              number: 80
+              number: 3000

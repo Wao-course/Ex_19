@@ -160,10 +160,10 @@ Use kubectl to apply the file content with your newly created _Service_ and
 _Ingress_.
 
 
-#### Accessing
+#### Accessing (solved)
 
-If you have done everything correctly at this point, then opening your browser
-at http://mycluster/XXXXX should direct you to the newly created application via
+>If you have done everything correctly at this point, then opening your browser
+at http://mycluster.my:8080/api should direct you to the newly created application via
 the _Ingress_ through the _Service_ unto the(a) _Pod_ itself. Where XXXX is
 REL\_URL\_PATH.
 
