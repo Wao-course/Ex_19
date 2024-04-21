@@ -311,7 +311,20 @@ line, otherwise it will not work!!
 
 - What exacly makes a _Service_ _headless_ and how does this affect accessing
   the underlying _Pods_?
+    >- Setting clusterIP == None makes it Headless
+  >* Accessing each of the 3 replicas DNS wise
+  >* The DNS naming convention is
+    ``StatefulSet.name + "-" + "ordinal index" +
+    "." + Service.name``
+  >* Here
+    Replica 1: mongo-0.mongo-service
+    Replica 2: mongo-1.mongo-service
+    Replica 3: mongo-2.mongo-service
+
 - How is a _volumeClaimTemplates_ different from a _PersistentVolumeClaim_?
+
+  > **_volumeClaimTemplates_** is a template for creating **_PersistentVolumeClaims_** for each _Pod_ in the _StatefulSet_.
+
 
 
 ### The Node application

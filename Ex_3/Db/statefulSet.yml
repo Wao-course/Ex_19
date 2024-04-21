@@ -4,15 +4,15 @@ metadata:
   name: mongo
   namespace: holy-namespace
 spec:
+  serviceName: "mongo-service"
   replicas: 3
   selector:
     matchLabels:
-      app: mongo
-  serviceName: mongo
+      role: mongo
   template:
     metadata:
       labels:
-        app: mongo
+        role: mongo
     spec:
       containers:
         - name: mongo
@@ -21,15 +21,12 @@ spec:
           ports:
             - containerPort: 27017
           volumeMounts:
-            - name: mongo-data
+            - name: mongodb-volume-pvc
               mountPath: /data/db
-      volumes:
-        - name: mongo-data
-          persistentVolumeClaim:
-            claimName: mongo-data-pvc
   volumeClaimTemplates:
     - metadata:
-        name: mongo-data-pvc
+        name: mongo-volume-pvc
+        namespace: holy-namespace
       spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
