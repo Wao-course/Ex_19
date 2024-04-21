@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment
+  namespace: holy-namespace
+  labels:
+    app: hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello
+        image: registry.gitlab.au.dk/swwao/demo-projs/typescript-mongodb-crud:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MONGODB_DBNAME
+          valueFrom:
+            configMapKeyRef:
+              name: mongo-config
+              key: dbname
+        - name: MONGODB_HOSTNAME
+          value: "mongo-0.mongo,mongo-1.mongo,mongo-2.mongo"  # Updated to include all replicas
+        - name: REL_URL_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: node-config
+              key: REL_URL_PATH
+      imagePullSecrets:
+      - name: registry-credentials

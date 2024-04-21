@@ -111,3 +111,23 @@ Finally, we have _DaemonSets_:
 
   - How can this be controlled if so desired?
     - DaemonSets can be controlled using node selectors to specify on which nodes they should run or using affinity rules to define preferences for certain nodes based on labels.
+
+
+
+
+```mermaid
+graph TD;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod1;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod2;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod3;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod4;
+    Ingress_Controller2-->|HTTP:8080|Default_Backend_Pod;
+    Ingress_Controller1-->|HTTPS:8443|Client;
+    Ingress_Controller2-->|HTTPS:8443|Client;
+    Node_Pod1-->|HTTP:3000|Node_Service;
+    Node_Pod2-->|HTTP:3000|Node_Service;
+    Node_Pod3-->|HTTP:3000|Node_Service;
+    Node_Pod4-->|HTTP:3000|Node_Service;
+    Default_Backend_Pod-->|HTTP:3000|Node_Service;
+
+```

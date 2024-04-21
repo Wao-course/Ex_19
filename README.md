@@ -346,6 +346,7 @@ are not bound together and thus not working together.
 
 Configuring the main _mongo_ node is therefore required. This can be done with the
 following commands.
+> add the following command to a ``replica.conf`` file
 
 ```
 rs.initiate()
@@ -361,7 +362,7 @@ each is likewise _mongo_.
 
 Save the above text to some file (here replica.conf) and run:
 
-> kubectl exec -it -n XXX mongo-0 mongosh < replica.conf
+`` kubectl exec -it -n XXX mongo-0 mongosh < replica.conf``
 
 Note that the namespace chosen here is _XXX_, replace it with your own.
 

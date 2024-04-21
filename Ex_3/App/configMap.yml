@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: node-config
+  namespace: holy-namespace
+data:
+  REL_URL_PATH: "/api"

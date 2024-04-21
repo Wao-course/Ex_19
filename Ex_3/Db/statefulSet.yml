@@ -4,7 +4,7 @@ metadata:
   name: mongo
   namespace: holy-namespace
 spec:
-  serviceName: "mongo-service"
+  serviceName: "mongo"
   replicas: 3
   selector:
     matchLabels:
@@ -21,7 +21,7 @@ spec:
           ports:
             - containerPort: 27017
           volumeMounts:
-            - name: mongodb-volume-pvc
+            - name: mongo-volume-pvc
               mountPath: /data/db
   volumeClaimTemplates:
     - metadata:
