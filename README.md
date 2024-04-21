@@ -385,7 +385,7 @@ Encompasses two things:
   - Are the PVC/PVs still intact?
   - What happens if the StatefulSet is reapplied? Is the data intact?
 
-# Training exercise 4  - MongoDB done right - BONUS
+# Training exercise 4  - MongoDB done right - BONUS (still in progress)
 
 There are numerous challenges getting MongoDB running correctly, when you want
 scaling to work. We have addressed some of it, however for a more proven and
@@ -398,3 +398,23 @@ https://www.mongodb.com/docs/kubernetes-operator/v1.18/kind-quick-start/ and
 have fun... ;-)
 
 OR you can also go with the _bitnami_ helm install... Up to you!
+
+
+## Diagram of the setup (ASK FOR HELP)
+
+```mermaid
+graph TD;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod1;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod2;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod3;
+    Ingress_Controller1-->|HTTP:8080|Node_Pod4;
+    Ingress_Controller2-->|HTTP:8080|Default_Backend_Pod;
+    Ingress_Controller1-->|HTTPS:8443|Client;
+    Ingress_Controller2-->|HTTPS:8443|Client;
+    Node_Pod1-->|HTTP:3000|Node_Service;
+    Node_Pod2-->|HTTP:3000|Node_Service;
+    Node_Pod3-->|HTTP:3000|Node_Service;
+    Node_Pod4-->|HTTP:3000|Node_Service;
+    Default_Backend_Pod-->|HTTP:3000|Node_Service;
+
+```
